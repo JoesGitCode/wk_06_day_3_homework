@@ -26,6 +26,16 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
+  const dreadfullyDistinct = {}
+  for (const journey of this.journeys) {
+    if (dreadfullyDistinct[journey.transport]) {
+      dreadfullyDistinct[journey.transport] += 1;
+    }
+    else {
+      dreadfullyDistinct[journey.transport] = 1;
+    }
+  }
+  return Object.keys(dreadfullyDistinct)
 
 };
 
